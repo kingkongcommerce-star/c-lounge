@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C Lounge | Premium Cocktail Lounge Bar in Thủ Dầu Một, Bình Dương</title>
+<meta name="description" content="C Lounge — a premium cocktail lounge bar at 176 Ngô Gia Tự, Thủ Dầu Một, Bình Dương. Craft cocktails, a curated spirits wall, and a moody two-level lounge. Open nightly from 6PM. Rated 5.0 on Google.">
+<meta property="og:title" content="C Lounge | Premium Cocktail Lounge Bar, Thủ Dầu Một">
+<meta property="og:description" content="Craft cocktails, a curated spirits wall, and a moody two-level lounge in the heart of Thủ Dầu Một, Bình Dương. Open nightly from 6PM. Rated 5.0 on Google.">
+<meta property="og:type" content="business.business">
+<meta property="og:image" content="assets/images/storefront-neon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "C Lounge",
+  "image": "assets/images/storefront-neon.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "176 Ngô Gia Tự",
+    "addressLocality": "Phường Thủ Dầu Một",
+    "addressRegion": "Hồ Chí Minh",
+    "postalCode": "820000",
+    "addressCountry": "VN"
+  },
+  "telephone": "+84961717083",
+  "servesCuisine": "Cocktail Bar",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"18:05","closes":"01:45"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"18:05","closes":"02:05"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"18:00","closes":"02:05"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"18:00","closes":"01:45"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "9"
+  }
+}
+</script>
+<style>
+  :root{
+    --gold:#c9a24b;
+    --gold-bright:#e6c274;
+    --pink:#ff3fb0;
+    --black:#0a0808;
+    --charcoal:#151112;
+    --charcoal-2:#1c1717;
+    --white:#f6f1e9;
+    --grey:#a89e94;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Jost',sans-serif;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond',serif;
+    letter-spacing:.5px;
+    line-height:1.05;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{display:block;max-width:100%;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;
+    background:rgba(10,8,8,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,75,0.18);
+    transition:padding .3s ease;
+  }
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white);}
+  .logo span{color:var(--gold-bright);}
+  .logo small{display:block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:3px;color:var(--grey);text-transform:uppercase;font-weight:500;margin-top:2px;}
+  nav ul{display:flex;gap:26px;list-style:none;}
+  nav a{font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--grey);transition:color .2s;}
+  nav a:hover{color:var(--gold-bright);}
+  .nav-cta{
+    background:var(--gold);color:var(--black)!important;
+    padding:11px 22px;border-radius:2px;font-weight:600;
+    font-size:12px;text-transform:uppercase;letter-spacing:1.5px;
+    white-space:nowrap;
+  }
+  .menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;min-height:100vh;padding-top:100px;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;animation:heroFade 18s infinite;
+    filter:brightness(0.4) saturate(1.05);
+  }
+  .hero-bg img:nth-child(1){animation-delay:0s;}
+  .hero-bg img:nth-child(2){animation-delay:6s;}
+  .hero-bg img:nth-child(3){animation-delay:12s;}
+  @keyframes heroFade{
+    0%{opacity:0;}
+    5%{opacity:1;}
+    33%{opacity:1;}
+    38%{opacity:0;}
+    100%{opacity:0;}
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg, rgba(10,8,8,0.35) 0%, rgba(10,8,8,0.25) 40%, rgba(10,8,8,0.96) 100%);
+  }
+  .hero-content{position:relative;z-index:2;padding:40px 20px;}
+  .hero-tag{
+    display:inline-block;color:var(--gold-bright);font-weight:600;letter-spacing:4px;
+    font-size:12px;margin-bottom:20px;text-transform:uppercase;
+  }
+  .hero h1{font-size:clamp(40px,8vw,92px);color:var(--white);text-transform:uppercase;}
+  .hero h1 .accent{color:var(--gold-bright);text-shadow:0 0 50px rgba(230,194,116,.45);}
+  .hero-sub{
+    margin:24px auto 6px;max-width:600px;font-size:clamp(16px,2vw,19px);
+    color:var(--grey);font-weight:400;font-style:italic;font-family:'Cormorant Garamond',serif;
+  }
+  .hero-sub2{
+    margin:0 auto 6px;max-width:640px;font-size:14px;color:var(--pink);font-weight:600;
+    text-transform:uppercase;letter-spacing:1.5px;
+  }
+  .hero-hours{
+    margin:0 auto 32px;color:var(--white);font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;
+  }
+  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;}
+  .btn{
+    padding:16px 32px;border-radius:2px;font-weight:600;text-transform:uppercase;
+    letter-spacing:1.5px;font-size:13px;transition:transform .2s, box-shadow .2s;
+    display:inline-block;
+  }
+  .btn-primary{background:var(--gold);color:var(--black);box-shadow:0 8px 30px rgba(201,162,75,.3);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 34px rgba(201,162,75,.45);}
+  .btn-outline{border:1px solid var(--white);color:var(--white);}
+  .btn-outline:hover{background:var(--white);color:var(--black);transform:translateY(-3px);}
+  .hero-contact{
+    display:flex;gap:26px;justify-content:center;flex-wrap:wrap;color:var(--grey);font-size:14px;font-weight:500;
+  }
+  .hero-contact a{color:var(--white);}
+  .hero-contact a:hover{color:var(--gold-bright);}
+  .scroll-cue{
+    position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--grey);font-size:11px;letter-spacing:3px;
+    text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-cue .line{width:1px;height:36px;background:linear-gradient(var(--gold-bright),transparent);animation:scrollpulse 1.8s infinite;}
+  @keyframes scrollpulse{0%{opacity:0;}50%{opacity:1;}100%{opacity:0;}}
+
+  /* SECTION SHARED */
+  section{padding:110px 0;position:relative;}
+  .eyebrow{color:var(--gold-bright);font-weight:600;letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:14px;}
+  .section-head{text-align:center;max-width:700px;margin:0 auto 64px;}
+  .section-head h2{font-size:clamp(32px,5vw,52px);color:var(--white);text-transform:uppercase;}
+  .section-head p{color:var(--grey);margin-top:16px;font-size:16px;}
+
+  /* INFO STRIP */
+  .info-strip{background:var(--charcoal-2);border-top:1px solid rgba(201,162,75,.2);border-bottom:1px solid rgba(201,162,75,.2);padding:26px 0;}
+  .info-row{display:flex;justify-content:center;gap:64px;flex-wrap:wrap;text-align:center;}
+  .info-item .ico{color:var(--gold-bright);font-size:18px;margin-bottom:6px;}
+  .info-item b{display:block;color:var(--white);font-size:14px;letter-spacing:.5px;}
+  .info-item span{color:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+
+  /* ABOUT */
+  .about{background:var(--charcoal);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-media{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+  .about-media img{width:100%;height:540px;object-fit:cover;}
+  .about-media::before{
+    content:"";position:absolute;inset:0;border:1px solid var(--gold);
+    border-radius:4px;margin:16px;pointer-events:none;
+  }
+  .about-text p{color:var(--grey);font-size:17px;line-height:1.85;margin-bottom:20px;}
+  .about-text strong{color:var(--white);}
+  .stat-row{display:flex;gap:40px;margin-top:36px;flex-wrap:wrap;}
+  .stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold-bright);}
+  .stat span{color:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+
+  /* WHY */
+  .why{background:var(--black);}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:920px;margin:0 auto;}
+  .why-item{
+    display:flex;align-items:center;gap:14px;background:var(--charcoal-2);
+    border:1px solid rgba(255,255,255,.07);border-radius:4px;padding:22px 22px;
+    transition:border-color .2s, transform .2s;
+  }
+  .why-item:hover{border-color:var(--gold);transform:translateY(-3px);}
+  .why-item .check{color:var(--gold-bright);font-size:18px;flex-shrink:0;}
+  .why-item span{color:var(--white);font-size:15px;font-weight:400;}
+
+  /* DRINKS */
+  .drinks{background:var(--charcoal);}
+  .drinks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:50px;}
+  .drink-card{border-radius:4px;overflow:hidden;position:relative;height:400px;}
+  .drink-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .drink-card:hover img{transform:scale(1.05);}
+  .drink-card span{
+    position:absolute;bottom:0;left:0;right:0;padding:22px;
+    background:linear-gradient(0deg, rgba(0,0,0,.9), transparent);
+    color:var(--white);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;text-transform:uppercase;letter-spacing:.5px;
+  }
+  .menu-note{max-width:700px;margin:0 auto;text-align:center;color:var(--grey);font-size:15px;line-height:1.7;}
+  .menu-note strong{color:var(--gold-bright);}
+
+  /* GALLERY */
+  .gallery{background:var(--black);}
+  .gallery-grid{columns:4 260px;column-gap:16px;}
+  .gallery-grid img{
+    width:100%;margin-bottom:16px;border-radius:4px;
+    break-inside:avoid;cursor:pointer;
+    transition:transform .3s, filter .3s;
+    filter:saturate(1.05);
+  }
+  .gallery-grid img:hover{transform:scale(1.02);filter:brightness(1.1) saturate(1.15);}
+
+  /* REVIEWS */
+  .reviews{background:var(--charcoal);text-align:center;}
+  .reviews-badge{
+    display:inline-flex;align-items:center;gap:14px;background:var(--black);
+    border:1px solid var(--gold);border-radius:100px;padding:18px 34px;margin-bottom:30px;
+  }
+  .reviews-badge .stars{color:var(--gold-bright);font-size:22px;letter-spacing:2px;}
+  .reviews-badge b{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--white);}
+  .reviews-badge span{color:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:1px;}
+  .reviews p.sub{color:var(--grey);font-size:15px;max-width:520px;margin:0 auto 30px;}
+
+  /* LOCATION */
+  .location{background:var(--black);}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .loc-card{background:var(--charcoal-2);border:1px solid rgba(201,162,75,.18);border-radius:6px;padding:40px;}
+  .loc-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;}
+  .loc-row .ico{color:var(--gold-bright);font-size:20px;width:26px;}
+  .loc-row h4{color:var(--white);font-size:14px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-family:'Jost',sans-serif;font-weight:600;}
+  .loc-row p{color:var(--grey);font-size:15px;line-height:1.7;}
+  .loc-row a{color:var(--gold-bright);font-weight:600;}
+  .hours-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .hours-table td{padding:4px 0;color:var(--grey);}
+  .hours-table td:last-child{text-align:right;color:var(--white);}
+  .loc-directions{display:block;text-align:center;margin-bottom:6px;margin-top:10px;}
+  .map-embed{border-radius:6px;overflow:hidden;height:100%;min-height:460px;border:1px solid rgba(201,162,75,.18);}
+  .map-embed iframe{width:100%;height:100%;min-height:460px;border:0;filter:grayscale(0.4) contrast(1.1) brightness(0.9);}
+
+  /* CTA BAND */
+  .cta-band{
+    background:linear-gradient(120deg, var(--gold), #8a6b1f);
+    color:var(--black);text-align:center;padding:90px 24px;
+  }
+  .cta-band h2{font-size:clamp(30px,5vw,50px);margin-bottom:20px;text-transform:uppercase;}
+  .cta-band p{font-size:17px;margin-bottom:34px;font-weight:500;max-width:560px;margin-left:auto;margin-right:auto;}
+  .cta-band .btn-outline{border-color:var(--black);color:var(--black);}
+  .cta-band .btn-outline:hover{background:var(--black);color:var(--gold-bright);}
+
+  footer{background:var(--black);padding:40px 24px 90px;text-align:center;border-top:1px solid rgba(255,255,255,.08);}
+  footer p{color:var(--grey);font-size:13px;margin-bottom:6px;}
+  footer .fname{color:var(--gold-bright);font-weight:600;}
+
+  /* MOBILE STICKY BAR */
+  .mobile-book-bar{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+    background:var(--charcoal-2);border-top:1px solid rgba(201,162,75,.3);
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;
+  }
+  .mobile-book-bar a{
+    flex:1;text-align:center;padding:14px 10px;border-radius:4px;font-weight:600;
+    font-size:12px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .mobile-book-bar .mb-book{background:var(--gold);color:var(--black);}
+  .mobile-book-bar .mb-dir{border:1px solid rgba(255,255,255,.25);color:var(--white);}
+
+  @media(max-width:900px){
+    nav ul, .nav-cta{display:none;}
+    .menu-toggle{display:block;}
+    .about-grid, .loc-grid{grid-template-columns:1fr;}
+    .drinks-grid{grid-template-columns:1fr;}
+    .about-media img{height:340px;}
+    .gallery-grid{columns:2 200px;}
+    .mobile-book-bar{display:flex;}
+    body{padding-bottom:70px;}
+    .hero-contact{flex-direction:column;gap:10px;}
+    .info-row{gap:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <a href="#top" class="logo">C <span>Lounge</span><small>Premium Lounge Bar</small></a>
+  <nav><ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#drinks">Cocktails</a></li>
+    <li><a href="#gallery">Ambience</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul></nav>
+  <a href="tel:+84961717083" class="nav-cta">Call to Reserve</a>
+  <button class="menu-toggle" aria-label="menu">&#9776;</button>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="assets/images/storefront-neon.webp" alt="C Lounge neon-lit storefront entrance in Thủ Dầu Một, Bình Dương">
+    <img src="assets/images/chandelier-bottle-wall.webp" alt="C Lounge two-level lounge with chandelier and spirits wall">
+    <img src="assets/images/lounge-good-vibes-neon.webp" alt="C Lounge velvet lounge seating with neon signage">
+  </div>
+  <div class="hero-content">
+    <span class="hero-tag">C Lounge &middot; Premium Lounge Bar &middot; Thủ Dầu Một, Bình Dương</span>
+    <h1>CRAFT COCKTAILS.<br><span class="accent">LATE-NIGHT VIBES.</span></h1>
+    <p class="hero-sub">A moody, two-level cocktail lounge in the heart of Thủ Dầu Một.</p>
+    <p class="hero-sub2">Craft Cocktails &bull; Premium Spirits &bull; Curated Ambience &bull; Late-Night Lounge</p>
+    <p class="hero-hours">Open Nightly From 6:00 PM</p>
+    <div class="hero-btns">
+      <a href="tel:+84961717083" class="btn btn-primary">Call to Reserve</a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=C+Lounge%2C+176+Ng%C3%B4+Gia+T%E1%BB%B1%2C+Th%E1%BB%A7+D%E1%BA%A7u+M%E1%BB%99t%2C+B%C3%ACnh+D%C6%B0%C6%A1ng%2C+Vietnam" target="_blank" class="btn btn-outline">Get Directions</a>
+      <a href="#drinks" class="btn btn-outline">View Cocktails</a>
+    </div>
+    <div class="hero-contact">
+      <span>📍 176 Ngô Gia Tự, Thủ Dầu Một, Bình Dương</span>
+      <a href="tel:+84961717083">📞 0961 717 083</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<div class="info-strip">
+  <div class="container info-row">
+    <div class="info-item"><div class="ico">★</div><b>5.0 on Google</b><span>9 Reviews</span></div>
+    <div class="info-item"><div class="ico">🕐</div><b>6PM &ndash; Late</b><span>Open Nightly</span></div>
+    <div class="info-item"><div class="ico">📍</div><b>Thủ Dầu Một</b><span>Bình Dương</span></div>
+    <div class="info-item"><div class="ico">🍸</div><b>Craft Cocktails</b><span>Curated Spirits Wall</span></div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="assets/images/chandelier-bottle-wall.webp" alt="Inside C Lounge — vintage chandelier and floor-to-ceiling spirits wall">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">The Lounge</span>
+      <h2 style="margin-bottom:22px;">A premium cocktail lounge for slow, good nights</h2>
+      <p><strong>C Lounge</strong> is a two-level cocktail lounge at 176 Ngô Gia Tự in Thủ Dầu Một, Bình Dương — built around a floor-to-ceiling wall of spirits, a vintage chandelier, and warm string lights strung across every ceiling. It's a place to settle into a velvet armchair, order something carefully made, and stay a while.</p>
+      <p>Downstairs centers on the bar and its curated bottle wall; upstairs opens onto a quieter balcony lounge. Every corner is styled with intention — from the neon signage at the door to the sunset mural tucked down the hallway — for a genuinely photogenic, date-night or group-night kind of space.</p>
+      <div class="stat-row">
+        <div class="stat"><b>5.0</b><span>Google Rating</span></div>
+        <div class="stat"><b>9</b><span>Google Reviews</span></div>
+        <div class="stat"><b>2</b><span>Levels of Lounge</span></div>
+        <div class="stat"><b>6PM+</b><span>Open Nightly</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The C Lounge Experience</span>
+      <h2>Why Spend The Night Here?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><span class="check">✓</span><span>Floor-to-ceiling spirits wall</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Handcrafted cocktails</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Two-level lounge &amp; balcony seating</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Velvet armchairs &amp; private corners</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Moody, string-lit ambience</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Open late, every night</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Central Thủ Dầu Một location</span></div>
+      <div class="why-item"><span class="check">✓</span><span>Great for dates &amp; small groups</span></div>
+      <div class="why-item"><span class="check">✓</span><span>5.0 rated on Google</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="drinks" id="drinks">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Craft Cocktails</span>
+      <h2>Made Carefully, Served Beautifully</h2>
+      <p>Signature cocktails and premium spirits, poured from a wall stocked floor to ceiling.</p>
+    </div>
+    <div class="drinks-grid">
+      <div class="drink-card"><img src="assets/images/cocktail-blue.webp" alt="Signature blue cocktail at C Lounge"><span>Signature Cocktails</span></div>
+      <div class="drink-card"><img src="assets/images/cocktails-duo-marble.webp" alt="Two craft cocktails on a marble table at C Lounge"><span>Crafted To Order</span></div>
+      <div class="drink-card"><img src="assets/images/bottle-shelf-sunset-window.webp" alt="Premium spirits shelf at C Lounge"><span>Premium Spirits</span></div>
+    </div>
+    <p class="menu-note">Full cocktail &amp; spirits menu available in-house. <strong>Call ahead at 0961 717 083</strong> to reserve a table or ask about tonight's specials.</p>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ambience</span>
+      <h2>Inside C Lounge</h2>
+      <p>The chandelier, the bottle wall, the velvet corners — a look inside before you visit.</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="assets/images/storefront-neon.webp" loading="lazy" alt="C Lounge neon entrance at night">
+      <img src="assets/images/interior-chandelier-balcony.webp" loading="lazy" alt="C Lounge chandelier and balcony view">
+      <img src="assets/images/lounge-red-velvet.webp" loading="lazy" alt="Red velvet lounge seating at C Lounge">
+      <img src="assets/images/balcony-purple-chandelier.webp" loading="lazy" alt="C Lounge upper balcony with purple lighting">
+      <img src="assets/images/bar-counter-guests.webp" loading="lazy" alt="Guests at the bar counter at C Lounge">
+      <img src="assets/images/lounge-good-vibes-neon.webp" loading="lazy" alt="Good vibes only neon sign at C Lounge">
+      <img src="assets/images/cherry-blossom-bar.webp" loading="lazy" alt="Cherry blossom decor by the bar at C Lounge">
+      <img src="assets/images/lounge-cherry-blossom-corner.webp" loading="lazy" alt="Quiet lounge corner with cherry blossom accents">
+      <img src="assets/images/mural-sunset-corridor.webp" loading="lazy" alt="Sunset mural in the C Lounge corridor">
+      <img src="assets/images/lounge-sunset-window.webp" loading="lazy" alt="Lounge seating beside a sunset skyline mural">
+      <img src="assets/images/bar-counter-staff.webp" loading="lazy" alt="Bartenders behind the counter at C Lounge">
+      <img src="assets/images/staircase-bottle-wall.webp" loading="lazy" alt="Staircase beside the spirits wall at C Lounge">
+      <img src="assets/images/corridor-chandelier-mural.webp" loading="lazy" alt="Corridor view of the chandelier and mural at C Lounge">
+      <img src="assets/images/lounge-poster-wall.webp" loading="lazy" alt="Art poster wall in a private lounge nook">
+      <img src="assets/images/cocktail-blue-neon.webp" loading="lazy" alt="Cocktail on the bar with neon signage in the background">
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="container">
+    <div class="reviews-badge">
+      <span class="stars">★★★★★</span>
+      <div><b>5.0 on Google</b><br><span>9 Reviews</span></div>
+    </div>
+    <div class="section-head" style="margin-bottom:10px;">
+      <h2>Rated 5.0 On Google</h2>
+      <p class="sub">C Lounge holds a perfect 5.0 rating from guests on Google. Read the reviews for yourself before you visit.</p>
+    </div>
+    <a href="https://www.google.com/search?q=c+lounge+binh+duong" target="_blank" class="btn btn-primary">Read Our Google Reviews</a>
+  </div>
+</section>
+
+<section class="location" id="location">
+  <div class="container loc-grid">
+    <div class="loc-card">
+      <span class="eyebrow">Find C Lounge</span>
+      <h2 style="margin-bottom:30px;">Visit Us In Thủ Dầu Một</h2>
+      <div class="loc-row"><div class="ico">📍</div><div><h4>Address</h4><p>176 Ngô Gia Tự, Phường Thủ Dầu Một<br>Bình Dương, Vietnam</p></div></div>
+      <div class="loc-row"><div class="ico">📞</div><div><h4>Phone</h4><p><a href="tel:+84961717083">0961 717 083</a></p></div></div>
+      <div class="loc-row"><div class="ico">🕐</div><div><h4>Hours</h4><p>
+        <table class="hours-table">
+          <tr><td>Monday &ndash; Thursday</td><td>6:05 PM &ndash; 1:45 AM</td></tr>
+          <tr><td>Friday</td><td>6:05 PM &ndash; 2:05 AM</td></tr>
+          <tr><td>Saturday</td><td>6:00 PM &ndash; 2:05 AM</td></tr>
+          <tr><td>Sunday</td><td>6:00 PM &ndash; 1:45 AM</td></tr>
+        </table>
+      </p></div></div>
+      <div class="loc-row"><div class="ico">🍸</div><div><h4>On Offer</h4><p>Craft cocktails &middot; Premium spirits &middot; Two-level lounge seating &middot; Balcony seating</p></div></div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=C+Lounge%2C+176+Ng%C3%B4+Gia+T%E1%BB%B1%2C+Th%E1%BB%A7+D%E1%BA%A7u+M%E1%BB%99t%2C+B%C3%ACnh+D%C6%B0%C6%A1ng%2C+Vietnam" target="_blank" class="btn btn-primary loc-directions">Get Directions</a>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps?q=C+Lounge,+176+Ngo+Gia+Tu,+Thu+Dau+Mot,+Binh+Duong,+Vietnam&output=embed" loading="lazy" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Planning A Night Out?</h2>
+  <p>Call ahead to reserve a table — seats in the best corners go fast on weekend nights.</p>
+  <a href="tel:+84961717083" class="btn btn-outline">Call 0961 717 083</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 <span class="fname">C Lounge</span> — 176 Ngô Gia Tự, Phường Thủ Dầu Một, Bình Dương, Vietnam</p>
+  <p>Open Nightly From 6:00 PM</p>
+  <p>Premium Cocktail Lounge Thủ Dầu Một &middot; Cocktail Bar Bình Dương &middot; Late-Night Lounge Bar</p>
+</footer>
+
+<div class="mobile-book-bar">
+  <a href="tel:+84961717083" class="mb-book">📞 Call to Reserve</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=C+Lounge%2C+176+Ng%C3%B4+Gia+T%E1%BB%B1%2C+Th%E1%BB%A7+D%E1%BA%A7u+M%E1%BB%99t%2C+B%C3%ACnh+D%C6%B0%C6%A1ng%2C+Vietnam" target="_blank" class="mb-dir">📍 Directions</a>
+</div>
+
+<script>
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.style.padding = window.scrollY > 40 ? '12px 32px' : '20px 32px';
+  });
+</script>
+
+</body>
+</html>
